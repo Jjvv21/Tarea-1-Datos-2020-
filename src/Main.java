@@ -3,26 +3,26 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application{
 	
-	 Button N_mensaje = new Button("Nuevo Mensaje");
-	 StackPane root = new StackPane(N_mensaje);
-	 WindowSendMessage SecondWindow = new WindowSendMessage();
+	
+
+	 Events events = new Events();
+	 Button NewMessageButton = new Button("Nuevo Mensaje");
+	 
 	 
 	 
 	 @Override
 	    public void start(Stage primaryStage) {
 		 	
-		 	N_mensaje.setOnAction(new EventHandler<ActionEvent>() {
-		 		public void handle(ActionEvent e) {
-		 			SecondWindow.CreateSecondStage(SecondWindow.SecondStage);
-		 			 
-		 		}
-		 	});
-	               
+		 	events.NewMessage(NewMessageButton);
+		 	StackPane root = new StackPane(NewMessageButton);
 	        Scene scene = new Scene(root, 300, 250);
 
 	        primaryStage.setTitle("WhatsOpp");
