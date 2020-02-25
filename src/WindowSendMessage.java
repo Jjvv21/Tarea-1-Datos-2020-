@@ -15,19 +15,26 @@ public class WindowSendMessage {
 	}
 	public void CreateSecondStage(Stage SecondStage,TextArea Text,Button Send,TextField Number,HBox hbox) {
 		BorderPane root2 = new BorderPane();
-		Text.setMaxSize(400, 400);
+	 	root2.setStyle("-fx-background-color: gray ;");
+	 	
+	
 		Label labelMensaje = new Label("Mensaje De Texto");
 		labelMensaje.setTranslateX(100);
 		labelMensaje.setTranslateY(30);
+		
 		Number.setPromptText("Numero De Telefono");
 		hbox.getChildren().addAll(Send,Number);
 		root2.setTop(labelMensaje);
+		
+		Text.setMaxSize(400, 400);
 		root2.setCenter(Text);
 		root2.setBottom(hbox);
+		
 		Scene SecondScene = new Scene(root2,600,500);
 		SecondStage.setTitle("Window Message");
 		SecondStage.setScene(SecondScene);
 		SecondStage.show();
+		
 	
 	}
 }
