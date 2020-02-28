@@ -1,40 +1,62 @@
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class WindowSendMessage {
 	Stage SecondStage = new Stage();
+	BorderPane Interior = new BorderPane();
+	static VBox cajaVertical = new VBox();
+	ScrollPane EstructuraDeTexto = new ScrollPane(cajaVertical);
 	
-	public Stage getSecondStage() {
-		return SecondStage;
-	}
-	public void CreateSecondStage(Stage SecondStage,TextArea Text,Button Send,TextField Number,HBox hbox) {
-		BorderPane root2 = new BorderPane();
-	 	root2.setStyle("-fx-background-color: gray ;");
+	
+	public void CreateSecondStage(Stage SecondStage,TextField Text,Button Send,TextField Number,HBox hbox) {
+				
 	 	
-	
-		Label labelMensaje = new Label("Mensaje De Texto");
-		labelMensaje.setTranslateX(100);
-		labelMensaje.setTranslateY(30);
-		
 		Number.setPromptText("Numero De Telefono");
+		Number.setMinWidth(243);
+		
 		hbox.getChildren().addAll(Send,Number);
-		root2.setTop(labelMensaje);
+		hbox.setTranslateY(74);		
 		
-		Text.setMaxSize(400, 400);
-		root2.setCenter(Text);
-		root2.setBottom(hbox);
+
 		
-		Scene SecondScene = new Scene(root2,600,500);
+		
+	
+		EstructuraDeTexto.setStyle("-fx-background-color: white ;");
+		EstructuraDeTexto.setMaxSize(300, 300);
+
+
+	
+		Text.setMaxWidth(303);
+		Text.setTranslateY(-75);
+		Text.setPromptText("Escribe un mensaje");
+		
+		
+		Interior.setPrefSize(300, 500);
+		Interior.setTop(hbox);
+		Interior.setBottom(Text);
+		Interior.setCenter(EstructuraDeTexto);
+		Interior.setStyle("-fx-background-color: gray ;");
+		
+		Scene SecondScene = new Scene(Interior,300,500);
 		SecondStage.setTitle("Window Message");
 		SecondStage.setScene(SecondScene);
 		SecondStage.show();
 		
 	
 	}
+
+	public Stage getSecondStage() {
+		return SecondStage;
+	}
+	public VBox getVBox() {
+		return cajaVertical;
+	}
+
 }
