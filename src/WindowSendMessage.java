@@ -15,16 +15,8 @@ public class WindowSendMessage {
 	ScrollPane EstructuraDeTexto = new ScrollPane(cajaVertical);
 	
 	
-	public void CreateSecondStage(Stage SecondStage,TextField Text,Button Send,TextField Number,HBox hbox) {
+	public void CreateSecondStage(Stage SecondStage,TextField Text,Button Send,HBox hbox2) {
 				
-	 	
-		Number.setPromptText("Numero De Telefono");
-		Number.setMinWidth(243);
-		
-		hbox.getChildren().addAll(Send,Number);
-		hbox.setTranslateY(74);		
-		
-
 		
 		
 	
@@ -34,13 +26,14 @@ public class WindowSendMessage {
 
 	
 		Text.setMaxWidth(303);
-		Text.setTranslateY(-75);
-		Text.setPromptText("Escribe un mensaje");
 		
+		Text.setPromptText("Escribe un mensaje");
+		Text.setMinWidth(253);
+		hbox2.getChildren().addAll(Text,Send);
+		hbox2.setTranslateY(-65);
 		
 		Interior.setPrefSize(300, 500);
-		Interior.setTop(hbox);
-		Interior.setBottom(Text);
+		Interior.setBottom(hbox2);
 		Interior.setCenter(EstructuraDeTexto);
 		Interior.setStyle("-fx-background-color: gray ;");
 		
