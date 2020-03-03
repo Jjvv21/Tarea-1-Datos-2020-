@@ -26,7 +26,7 @@ public class Main extends Application{
 		 	Numero.setMaxWidth(126);
 		 	Numero.setTranslateY(-70);
 		 	root.getChildren().addAll(NewMessageButton,Numero);
-		 	root.setStyle("-fx-background-color: #6C6C6C;");
+		 	root.setStyle("-fx-background-color: #aae79f;");
 	        Scene scene = new Scene(root, 300, 250);
 
 	        this.primaryStage.setTitle("WhatsOpp");

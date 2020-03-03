@@ -35,7 +35,7 @@ public class WindowSendMessage {
 		Interior.setPrefSize(300, 500);
 		Interior.setBottom(hbox2);
 		Interior.setCenter(EstructuraDeTexto);
-		Interior.setStyle("-fx-background-color: gray ;");
+		Interior.setStyle("-fx-background-color:  #aae79f ;");
 		
 		Scene SecondScene = new Scene(Interior,300,500);
 		SecondStage.setTitle("Window Message");
