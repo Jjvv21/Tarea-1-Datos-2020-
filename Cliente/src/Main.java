@@ -29,7 +29,7 @@ public class Main extends Application{
 		 	root.setStyle("-fx-background-color: #aae79f;");
 	        Scene scene = new Scene(root, 300, 250);
 
-	        this.primaryStage.setTitle("WhatsOpp");
+	        this.primaryStage.setTitle("Watzab");
 	        this.primaryStage.setScene(scene);
 	        this.primaryStage.show();
 	 }

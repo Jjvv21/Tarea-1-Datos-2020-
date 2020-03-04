@@ -15,7 +15,7 @@ public class WindowSendMessage {
 	ScrollPane EstructuraDeTexto = new ScrollPane(cajaVertical);
 	
 	
-	public void CreateSecondStage(Stage SecondStage,TextField Text,Button Send,HBox hbox2) {
+	public void CreateSecondStage(Stage SecondStage,TextField Text,Button Send,HBox hbox2, TextField remitente) {
 				
 		
 		
@@ -24,14 +24,16 @@ public class WindowSendMessage {
 		EstructuraDeTexto.setMaxSize(300, 300);
 
 
-	
-		Text.setMaxWidth(303);
+		remitente.setPromptText("¿Quién lo envía?");
 		
+		Text.setMaxWidth(303);
 		Text.setPromptText("Escribe un mensaje");
 		Text.setMinWidth(253);
+		
 		hbox2.getChildren().addAll(Text,Send);
 		hbox2.setTranslateY(-65);
 		
+		Interior.setTop(remitente);
 		Interior.setPrefSize(300, 500);
 		Interior.setBottom(hbox2);
 		Interior.setCenter(EstructuraDeTexto);
@@ -40,6 +42,7 @@ public class WindowSendMessage {
 		Scene SecondScene = new Scene(Interior,300,500);
 		SecondStage.setTitle("Window Message");
 		SecondStage.setScene(SecondScene);
+		SecondStage.setResizable(false);
 		SecondStage.show();
 		
 	

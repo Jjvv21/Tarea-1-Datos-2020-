@@ -11,19 +11,21 @@ public class Bandeja {
 
 	List<String> mensajes = new ArrayList<>();
 	private static int i2;
+
 	
+	public void setpuerto(String numero) {
+		Main.Numero.setText("Tu numero es: "+numero);
+	}
 	public void NumMensajes() {
 		int i=0;
 		this.i2=i;
 		i++;
 	}
 	
-	public void BandejaEntrada(String Mensaje) {
+	public void BandejaEntrada(String Mensaje,Button newMessage,String numero) {
 		List<String> mensajes = new ArrayList<>();
 		mensajes.add(Mensaje);
-		System.out.println(Mensaje);
 		Main.label2.setText(Mensaje);
-		Button newMessage = new Button("nuevo mensaje");
 		newMessage.setStyle("-fx-background-color: white;");
 		newMessage.setOnAction(new EventHandler<ActionEvent>() {
 	 		public void handle(ActionEvent e) {

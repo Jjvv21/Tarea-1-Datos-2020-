@@ -11,21 +11,28 @@ import javafx.scene.control.Label;
 
 public class Socket extends Thread {
 	
+
 	public void run(){
 		boolean active = true;
+		int port = (int) Math.floor(Math.random()*(30000-20000+1)+20000);
 		try {
-			ServerSocket serverSocket = new ServerSocket(50000);
+			ServerSocket serverSocket = new ServerSocket(port);
+			Bandeja bandeja = new Bandeja();
+			String numeroPuerto = Integer.toString(port);
+			bandeja.setpuerto(numeroPuerto);
 			while(active) {
 				java.net.Socket entrante = serverSocket.accept();
 				BufferedReader lector = new BufferedReader(new InputStreamReader(entrante.getInputStream()));
 				String mensaje = lector.readLine();
-				
-				Bandeja bandeja = new Bandeja();
-				Platform.runLater(() -> bandeja.BandejaEntrada(mensaje));
+				Button newMensaje = new Button ("Mensaje De:"+entrante.getLocalAddress());
+				Platform.runLater(() -> bandeja.BandejaEntrada(mensaje,newMensaje,numeroPuerto));
 				Platform.runLater(() -> bandeja.NumMensajes());
 	
 				entrante.close();	
+			
 			}
+			
+			
 			
 
 			

@@ -19,6 +19,7 @@ public class Events {
 
 	 WindowSendMessage SecondWindow = new WindowSendMessage();
 	 TextField text = new TextField();
+	 TextField remitente = new TextField();
 	 Button Send = new Button();
 	 HBox hbox_Numero = new HBox();
 	 HBox hbox_EnviarMensaje = new HBox();
@@ -27,7 +28,7 @@ public class Events {
 	 
 
 	public void NewMessage (TextField Numero,Button NewMessage,Stage stage) throws FileNotFoundException {
-		Events.this.Enviar(Send, text);
+		Events.this.Enviar(Send, text,remitente);
 		
 		FileInputStream NuevoMensaje = new FileInputStream("C:\\Users\\Julio Varela\\Documents\\GitHub\\Tarea-1-Datos-2020-\\NuevoMensaje.jpg"); 
 		Image i = new Image(NuevoMensaje);
@@ -45,7 +46,7 @@ public class Events {
 	 				String NumeroEnCadena = Numero.getText();
 	 				int Port = Integer.parseInt(NumeroEnCadena);
 	 				Puerto = Port;
-		 			SecondWindow.CreateSecondStage(SecondWindow.SecondStage,text,Send,hbox_EnviarMensaje);
+		 			SecondWindow.CreateSecondStage(SecondWindow.SecondStage,text,Send,hbox_EnviarMensaje,remitente);
 		 			stage.close();
 	 			}
 	 			
@@ -61,7 +62,7 @@ public class Events {
 	 *@param texto
 	 * @throws FileNotFoundException 
 	 */
-	 private void Enviar(Button Send,TextField texto) throws FileNotFoundException {
+	 private void Enviar(Button Send,TextField texto,TextField remitente) throws FileNotFoundException {
 		FileInputStream EnviarMensaje = new FileInputStream("C:\\Users\\Julio Varela\\Documents\\GitHub\\Tarea-1-Datos-2020-\\Send.png"); 
 		Image i2 = new Image(EnviarMensaje);
 		ImageView skip2 = new ImageView(i2); 
@@ -82,7 +83,7 @@ public class Events {
 					Cliente SocketClient = new Cliente();
 					try {
 						System.out.println(Puerto);
-						SocketClient.Conexion(mensaje,Puerto);
+						SocketClient.Conexion(mensaje,Puerto,remitente.getText());
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 					

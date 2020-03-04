@@ -18,6 +18,7 @@ public class Main extends Application {
 
 		Label label1 = new Label("Bandeja De Entrada");
 		public static Label label2 = new Label();
+		public static Label Numero = new Label();
 		Insets insets = new Insets(5, 5, 5, 5);
 		public static VBox BandejaEntrada = new VBox();
 		Bandeja bandeja = new Bandeja();
@@ -35,12 +36,15 @@ public class Main extends Application {
 	    	BandejaEntrada.getChildren().addAll(label1);
 		 	ScrollPane ScrollBandeja = new ScrollPane(BandejaEntrada);
 		 	root.setLeft(ScrollBandeja);
-		 
+		 	label2.setTranslateY(-200);
 		 	root.setCenter(label2);
+		 	Numero.setTranslateX(210);
+		 	root.setTop(Numero);
 		 	
 		 	Scene scene = new Scene(root,500,600);
 	        primaryStage.setTitle("Bandeja De Entrada");
 	        primaryStage.setScene(scene);	    	   
+	        primaryStage.setResizable(false);
 	        primaryStage.show();
 	      
 	    }
