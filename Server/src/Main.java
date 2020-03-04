@@ -35,7 +35,8 @@ public class Main extends Application {
 	    	BandejaEntrada.getChildren().addAll(label1);
 		 	ScrollPane ScrollBandeja = new ScrollPane(BandejaEntrada);
 		 	root.setLeft(ScrollBandeja);
-		 	root.setRight(label2);
+		 
+		 	root.setCenter(label2);
 		 	
 		 	Scene scene = new Scene(root,500,600);
 	        primaryStage.setTitle("Bandeja De Entrada");

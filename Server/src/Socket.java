@@ -19,10 +19,10 @@ public class Socket extends Thread {
 				java.net.Socket entrante = serverSocket.accept();
 				BufferedReader lector = new BufferedReader(new InputStreamReader(entrante.getInputStream()));
 				String mensaje = lector.readLine();
-
+				
 				Bandeja bandeja = new Bandeja();
 				Platform.runLater(() -> bandeja.BandejaEntrada(mensaje));
-				
+				Platform.runLater(() -> bandeja.NumMensajes());
 	
 				entrante.close();	
 			}
