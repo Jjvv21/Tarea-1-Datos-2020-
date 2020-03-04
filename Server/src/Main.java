@@ -1,6 +1,7 @@
 import java.io.FileNotFoundException;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -16,23 +17,26 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 		Label label1 = new Label("Bandeja De Entrada");
-		Label label2 = new Label("Bandeja Vacia");
+		public static Label label2 = new Label();
 		Insets insets = new Insets(5, 5, 5, 5);
 		public static VBox BandejaEntrada = new VBox();
-	
-
+		Bandeja bandeja = new Bandeja();
+		
 		
 	    public void start(Stage primaryStage)  {	 
-	    	label2.setTranslateY(300);
+	    	
+	    	
+			BorderPane root = new BorderPane();
+			root.setStyle("-fx-background-color: #aae79f;");
+			Insets insets = new Insets(5, 5, 5, 5);
+			label2.setTranslateY(300);
 	    	label2.setTranslateX(15);
 	    	BandejaEntrada.setPadding(insets);
-	    	BandejaEntrada.getChildren().addAll(label1,label2);
+	    	BandejaEntrada.getChildren().addAll(label1);
 		 	ScrollPane ScrollBandeja = new ScrollPane(BandejaEntrada);
-		 	BorderPane root = new BorderPane();
-		 	
-	
 		 	root.setLeft(ScrollBandeja);
-		 	root.setStyle("-fx-background-color: #aae79f;");
+		 	root.setRight(label2);
+		 	
 		 	Scene scene = new Scene(root,500,600);
 	        primaryStage.setTitle("Bandeja De Entrada");
 	        primaryStage.setScene(scene);	    	   
@@ -43,6 +47,8 @@ public class Main extends Application {
 			Socket socket = new Socket();
 			socket.start();
 			launch(args);
+			
+			
 			
 		
 
