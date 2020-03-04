@@ -14,7 +14,15 @@ public class WindowSendMessage {
 	static VBox cajaVertical = new VBox();
 	ScrollPane EstructuraDeTexto = new ScrollPane(cajaVertical);
 	
-	
+	/**
+	 * Esta funcion se encarga de crear la interfaz para la ventana que tendra el cliente 
+	 * que envia el mensaje al servidor
+	 * @param SecondStage
+	 * @param Text
+	 * @param Send
+	 * @param hbox2
+	 * @param remitente
+	 */
 	public void CreateSecondStage(Stage SecondStage,TextField Text,Button Send,HBox hbox2, TextField remitente) {
 				
 		

@@ -16,7 +16,9 @@ public class Main extends Application{
 	 Stage primaryStage = new Stage();
 	 TextField Numero = new TextField();
 	 
-	 
+	 /**
+	  *  Esta funcion ejecuta la interfaz grafica que va a tener la ventana que pide el numero al cual sera enviado el mensaje
+	  */
 	 @Override
 	    public void start(Stage primaryStage) throws FileNotFoundException {
 		 	

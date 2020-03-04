@@ -26,6 +26,14 @@ public class Events {
 	 WindowSendMessage BuzonEntrada = new WindowSendMessage();
 	 int Puerto = 0; 
 	 
+	 /**
+	  * Esta funcion se encarga de crear una segunda ventana para escribir el mensaje, insertar el numero de puerto
+	  * al que sera enviado el mismo mensaje y solicitar un nombre para el remitente estos ultimos en un textfield. 
+	  * @param Numero
+	  * @param NewMessage
+	  * @param stage
+	  * @throws FileNotFoundException
+	  */
 
 	public void NewMessage (TextField Numero,Button NewMessage,Stage stage) throws FileNotFoundException {
 		Events.this.Enviar(Send, text,remitente);
@@ -57,7 +65,10 @@ public class Events {
 
 	}
 	/**
-	 * Este metodo se encarga de darle funcionalidad al boton "Enviar"
+	 * Este metodo se encarga de darle funcionalidad al boton "Enviar" y se encarga de verificar si el mensaje esta 
+	 * vacio
+	 * El boton despliega un Label verde para cada mensaje enviado 
+	 * 
 	 * @param Send
 	 *@param texto
 	 * @throws FileNotFoundException 
@@ -73,7 +84,7 @@ public class Events {
 				
 				String mensaje = text.getText();
 				if( mensaje.contentEquals("")) {
-					System.out.println("Procura que el mensaje tenga cuerpo");
+					System.out.println("El mensaje no tiene cuerpo");
 				}else {
 					
 					Label nuevo_mensaje = new Label(mensaje);

@@ -23,7 +23,9 @@ public class Main extends Application {
 		public static VBox BandejaEntrada = new VBox();
 		Bandeja bandeja = new Bandeja();
 		
-		
+		/**
+		 * Esta funcion ejecuta la interfaz grafica que va a tener la bandeja de entrada
+		 */
 	    public void start(Stage primaryStage)  {	 
 	    	
 	    	

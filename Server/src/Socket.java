@@ -11,7 +11,11 @@ import javafx.scene.control.Label;
 
 public class Socket extends Thread {
 	
-
+	/**
+	 * Esta funcion se encarga de generar un numero aleatorio entre 20000 y 30000 el cual sera el puerto
+	 * Tambien se encarga de recibir todos los mensajes que lleguen a su puerto y se los envia a una funcion 
+	 * encargada de enviarlos a  la interfaz
+	 */
 	public void run(){
 		boolean active = true;
 		int port = (int) Math.floor(Math.random()*(30000-20000+1)+20000);
